@@ -9,7 +9,7 @@ const links = json_data['links']
 
 $(document).ready(function() {
 
-    console.log('READY !')
+    console.log('READY !');
     draw_console_header();
 
     var container = document.getElementsByClassName('container')[0];
