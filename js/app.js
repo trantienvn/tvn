@@ -135,7 +135,7 @@ function copy(str) {
 
     show_modal(`Đã sao chép  ${str}  vào bộ nhớ tạm  !`);
 
-    console.log(`Copied ${str}`)
+    console.log(`Sao Chép ${str}`)
 }
 
 function show_modal(str) {
