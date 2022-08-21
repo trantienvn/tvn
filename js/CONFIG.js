@@ -16,14 +16,14 @@ const __DATA__ = {
             'image': 'facebook.jpg',
             'title': 'Facebook',
             'show-value': 'Trần Tiến',
-            'value': 'https://www.facebook.com/trantienpy/',
+            'value': 'https://www.facebook.com/trantien0209/',
             'type': 0,
         },
 		{
             'image': 'mess.jpg',
             'title': 'Messenger',
             'show-value': 'Trần Tiến',
-            'value': 'https://m.me/trantienpy',
+            'value': 'https://m.me/trantien0209',
             'type': 0,
         },
         {
