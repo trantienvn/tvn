@@ -1,9 +1,10 @@
 .popup {
     position: fixed;
+	color: #fff;
     width: 350px;
     height: 200px;
     padding: 15px 20px;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 30px;
     box-sizing: border-box;
     z-index: 2;
@@ -30,7 +31,6 @@
 }
 
 .popup .description {
-    color: #333;
     font-size: 15px;
     padding: 5px;
 }
@@ -41,8 +41,8 @@
 
 .popup .dismiss-btn button {
     padding: 10px 20px;
-    background: #000;
-    color: #fff;
+    background: #fafafa;
+    color: #000;
     font-size: 16px;
     font-weight: 600;
     border-radius: 10px;

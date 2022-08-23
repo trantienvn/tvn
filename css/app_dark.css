@@ -1,5 +1,5 @@
 html {
-    background-color: #eeeeee;
+    background-color: #333;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -42,7 +42,8 @@ body {
     width: 411px;
     max-width: 411px;
     min-height: 823px;
-    background-color: #FFFFFF;
+    background-color: #010101;
+	color: #fff;
     border-radius: 30px;
     -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, 0.4);
     box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, 0.1);
@@ -129,7 +130,7 @@ body {
     grid-template-columns: 70px auto;
     height: 70px;
     width: 100%;
-    background-color: #E8F0FB;
+    background-color: #1E2124;
     border-radius: 20px;
     -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, 0.4);
     box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, 0.1);
@@ -156,7 +157,7 @@ body {
     position: absolute;
     font-size: 12px;
     bottom: 15px;
-    color: #587FE1;
+    color: #58CFE1;
     font-weight: 500;
 }
 
@@ -185,7 +186,7 @@ body {
     grid-template-columns: 70px auto 65px;
     height: 70px;
     width: 100%;
-    background-color: #FAFAFA;
+    background-color: #222;
     border-radius: 20px;
     margin-bottom: 15px;
     -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, 0.4);
@@ -194,7 +195,7 @@ body {
 }
 
 .link-item:hover {
-    background-color: #eeeeee;
+    background-color: #333;
 }
 
 .link-content {
@@ -329,12 +330,13 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 :root {
-  --white: white;
-  --black: black;
-  --gray: #fafafa;
-  --grhv: #eee;
-  --textsp: #587FE1;
-  --bg: #E8F0FB;
+  --white: black;
+  --black: white;
+  --gray: #222;
+  --grhv: #333;
+  --textsp: #58CFE1;
+  --bg: #1E2124;
 }
 
