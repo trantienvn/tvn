@@ -8,9 +8,9 @@ const __DATA__ = {
         'Marvel',
     ],
     'bio-storys': [{
-        'image': 'ad.jpg',
+        'image': 'admin.png',
         'content': 'Giới thiệu',
-        'author': 'Chào Bạn 👋,tui sống tại TP Phổ Yên',
+        'author': 'Chào Bạn 👋,tui sống tại TP Phổ Yên - Thái Nguyên',
     }, ],
     'links': [{
             'image': 'facebook.jpg',
