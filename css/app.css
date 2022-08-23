@@ -258,6 +258,7 @@ body {
 .link-btn-chill:hover::before {
     opacity: 0.5;
 }
+
 /*Simple css to style it like a toggle switch*/
 .theme-switch-wrapper {
   display: flex;
@@ -293,7 +294,7 @@ body {
 }
 
 .slider {
-  background-color: var(--black);
+  background-color: var(--gray);
   bottom: 0;
   left: 0;
   position: absolute;
@@ -314,7 +315,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: (--white);
+  background-color: (--black);
 }
 
 input:checked + .slider:before {
@@ -329,10 +330,11 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 :root {
   --white: white;
   --black: black;
-  --gray: #fafafa;
+  --gray: #666;
   --grhv: #eee;
   --textsp: #587FE1;
   --bg: #E8F0FB;

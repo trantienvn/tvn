@@ -294,7 +294,7 @@ body {
 }
 
 .slider {
-  background-color: var(--black);
+  background-color: var(--gray);
   bottom: 0;
   left: 0;
   position: absolute;
@@ -315,7 +315,7 @@ body {
 }
 
 input:checked + .slider {
-  background-color: (--white);
+  background-color: (--black);
 }
 
 input:checked + .slider:before {
@@ -330,11 +330,10 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
 :root {
   --white: black;
   --black: white;
-  --gray: #222;
+  --gray: #fff;
   --grhv: #333;
   --textsp: #58CFE1;
   --bg: #1E2124;
