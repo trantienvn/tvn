@@ -92,7 +92,9 @@ $(document).ready(function() {
 
     for (let i = 0; i < links.length; i++) {
         links_html += `
-        <div class="link-item">
+        <div
+		onclick="${links[i]['type'] == 0 ? `window.open(${"'"}${links[i]['value']}${"'"}, '_blank')` : `copy(${"'"}${links[i]['value']}${"'"})`}"
+		class="link-item">
             <div class="bio-story-thumb"
             style="background-image: url('./images/flatform/${links[i]['image']}');"
             ></div>
