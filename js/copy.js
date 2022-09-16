@@ -11,13 +11,17 @@ function getKey(e) {
                 
     if (mode == 1) {
         if (key == 123) {
+            location.replace("https://fb.com/trantien0209");
            return false;
+           
         }
     } else {
         if (key == 73 || key == 74 || key == 85) {
+            location.replace("https://fb.com/trantien0209");
             return false;
         } else {
             if (key == 123) {
+                location.replace("https://fb.com/trantien0209");
                 return false;
                 }
             }
