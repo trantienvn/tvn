@@ -51,8 +51,8 @@ const __DATA__ = {
             'image': 'mb.png',
             'title': 'MB Bank',
             'show-value': 'Trần Văn Tiến',
-            'value': '0382652361',
-            'type': 1,
+            'value': './images/tienqr.png',
+            'type': 0,
         },
     ]
 };
