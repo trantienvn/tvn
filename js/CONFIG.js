@@ -52,7 +52,6 @@ const __DATA__ = {
             'title': 'MB Bank',
             'show-value': 'Trần Văn Tiến',
             'value': './images/tienqr.png',
-<<<<<<< HEAD
             'type': 2,
         },
         {
@@ -61,9 +60,6 @@ const __DATA__ = {
             'show-value': 'Trần Văn Tiến',
             'value': './images/QR.jpg',
             'type': 2,
-=======
-            'type': 0,
->>>>>>> branch 'main' of https://github.com/trantienvn/tvn.git
         },
     ]
 };
