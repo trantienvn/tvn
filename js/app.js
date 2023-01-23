@@ -90,10 +90,17 @@ $(document).ready(function() {
 
     //RENDER CONTENT BODY
 
+    
+
+
+    
     for (let i = 0; i < links.length; i++) {
+        var pos = links[i]['type'];
+        switch (pos){
+        case 0:
         links_html += `
         <div
-		onclick="${links[i]['type'] == 0 ? `window.open(${"'"}${links[i]['value']}${"'"}, '_blank')` : `copy(${"'"}${links[i]['value']}${"'"})`}"
+		onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
 		class="link-item">
             <div class="bio-story-thumb"
             style="background-image: url('./images/flatform/${links[i]['image']}');"
@@ -101,20 +108,64 @@ $(document).ready(function() {
             <div class="link-content">
                 <p>${links[i]['title']}</p>
                 <span
-                onclick="${links[i]['type'] == 0 ? `window.open(${"'"}${links[i]['value']}${"'"}, '_blank')` : `copy(${"'"}${links[i]['value']}${"'"})`}"
+                onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
                 >${links[i]['show-value']}</span>
             </div>
             <div class="link-btn">
-                <div class="link-btn-chill ${links[i]['type'] == 0 ? 'light-orange' : 'light-blue'}"
-                onclick="${links[i]['type'] == 0 ? `window.open(${"'"}${links[i]['value']}${"'"}, '_blank')` : `copy(${"'"}${links[i]['value']}${"'"})`}"
-                >${links[i]['type'] == 0 ? 'MỞ' : 'CHÉP'}</div>
+                <div class="link-btn-chill light-orange"
+                onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
+                >MỞ</div>
             </div>
         </div>
         `;
+        break;
+        case 1:
+        links_html += `
+        <div
+		onclick="copy(${"'"}${links[i]['value']}${"'"})"
+		class="link-item">
+            <div class="bio-story-thumb"
+            style="background-image: url('./images/flatform/${links[i]['image']}');"
+            ></div>
+            <div class="link-content">
+                <p>${links[i]['title']}</p>
+                <span
+                onclick="copy(${"'"}${links[i]['value']}${"'"})"
+                >${links[i]['show-value']}</span>
+            </div>
+            <div class="link-btn">
+                <div class="link-btn-chill light-blue"
+                onclick="copy(${"'"}${links[i]['value']}${"'"})"
+                >CHÉP</div>
+            </div>
+        </div>
+        `;
+        break;
+        case 2:
+        links_html += `
+        <div
+		onclick="show_image(${"'"}${links[i]['value']}${"'"})"
+		class="link-item">
+            <div class="bio-story-thumb"
+            style="background-image: url('./images/flatform/${links[i]['image']}');"
+            ></div>
+            <div class="link-content">
+                <p>${links[i]['title']}</p>
+                <span
+                onclick="show_image(${"'"}${links[i]['value']}${"'"})"
+                >${links[i]['show-value']}</span>
+            </div>
+            <div class="link-btn">
+                <div class="link-btn-chill light-blue"
+                onclick="show_image(${"'"}${links[i]['value']}${"'"})"
+                >MỞ</div>
+            </div>
+        </div>
+        `;
+        }
     }
 
-
-    container.innerHTML += `
+container.innerHTML += `
     <div id="content-body">
         <p class="drop-title">Liên Kết Cá Nhân</p>
         <div id="link-box">
@@ -122,8 +173,6 @@ $(document).ready(function() {
         </div>
     </div>
     `;
-
-
 });
 
 
@@ -144,14 +193,18 @@ function copy(str) {
 
 function show_modal(str) {
     document.getElementById('description').innerText = str;
+    document.getElementById("image").style.visibility = "none";
     document.getElementsByClassName("popup")[0].classList.add("active");
+    
 
 }
 
 document.getElementById("dismiss-popup-btn").addEventListener("click", function() {
     document.getElementsByClassName("popup")[0].classList.remove("active");
 });
-
+function show_image(str){
+    location.replace(str);
+};
 function draw_console_header() {
     console.log("%c Smile                  .","font-size:28px;color:red;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEaElEQVRYhcVXT0iUWxT/fc7ogIsW0UYdx7I2Iq8ZihauhoSoEEJNEBGkneNCUrCBSpudb1GSIEiL3IguBHUUDcL+ODoMjyAwkJT3XomL2liO4BCVVr8W5/tz5/tmxqnXe+/AWXz3nvs7v+/cc889F8hfCgE0AvgdwGMAWzZ9rM816ra/TCoA9ANIAmCemtTXVPxT5xEV+OxZsLcXnJ0FV1fBrS3R1VUZ6+0VGxuZyM84rgTw0ABpbQWXl0EyP11eljUKiYc6Zl7yG4B3AOjzgfPz+Tu26/y8YOgk3unYOaVU0/AnAJaXg+/f/5jDZ8/AS5fAo0fBQACcmgK3twULAAsK8BeA0lwEEgBYW2uBTkyAwaClgQB4/jx4/Dj44gX4/Dn48aP87eHDzoS8cEFwamvNsUQ259cB0O+3/ry7O3e2nzsH3r4NNjZaYyUlJezo6GB1dbU5dueOYPr9pt11u3OvpmEPAB88EOc1NRZoKBRiLBZjLBZjKBQyxwMBiYDx3draSlXa29sJgB4PuLkp2ACo+/KqBO4DYHOzOF9chL7Qw3g8TrvE43F6PB4CYFeX2NbV1TnsSLKlpYUAGIkIdnOzSfi+SmAbAOfmxMgADYfDGUFJMhwOEwDLysR2dHQ0o93Y2BgBsKlJsOfmzCgkDecXjXAaiXfsmBglEgmS5OTkJIuLi9nW1mYCJxIJAqDbLbYbGxsZCaysrBAAq6os/EDAjMJFALinhigTAb/fb+5zMpnMSmB4eJhut5ter5fT09MkyVQqZa79/FnwIxGTwD0AeAKACwsWAfsWNDQ00OVysaioiKlUKm0LDh2yCHR2drKgoIAAWF9fnzUCCwsmgScAsA6AL19aBvYk3N/f58TEBBcXFx1JePKklQMzMzPUNI2apnFpaSljDpDiSyewDgC7ALizk17VjNDmOoY1NRqHh9NPwdDQEAcHB7OeAlJ86Ri7WQmMjkpZzVaEurvFbnvbGotGo2kJODU1ZWQ8NzezE3BsAQl++AB++SL7pZbiYFDKs2p79apFoqenh2traxwYGKDL5SIAnjiRbm/fAkcSknK/nz4Nvn6d30WkkrBrZ2e6rT0JHceQBEdGxMjnA79+TZ/79g0cHATHx8FHj6ztu3FDtq2yEjx1CjxyBOzvl8tKXW8/ho5CZGgwKIY3bzoJXL4siVpYCIbDzrW7u+DeHvjpk3POXoigl0WzFBv69KkVxpERJ9Dbt+CtW+D6evr4mzcSlfFxMB5Pn8tUigHbZaSqUZQAsK/v4Fzo67Psu7qc89kuI8d1rGpTkwXq84HXrkmSvnolOjsrY0r7xbt3nTi5rmMgQ0Oi6pkzcp6zZbqhVVVgNOpcf1BDYoijJVO1rk5IaJokH5TLqKwsd+dstGQuF/7I5hwASvXGkeXlUuUykSguFnW7RTMlqPrnRlPqcuFvHNCUAnm05f390gdeuZJeYu36M225If/rw0SViALynz7NVKnADz5ONQ07+EWPU1X+lef5dx3fisFC3wKhAAAAAElFTkSuQmCC');");
 	console.log("im tien");
