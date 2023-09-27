@@ -53,13 +53,6 @@ const __DATA__ = {
             'show-value': 'Trần Văn Tiến',
             'value': './images/tienqr.png',
             'type': 2,
-        },
-        {
-            'image': 'vnp.jpg',
-            'title': 'VNPay',
-            'show-value': 'Trần Văn Tiến',
-            'value': './images/QR.jpg',
-            'type': 2,
-        },
+        }
     ]
 };
