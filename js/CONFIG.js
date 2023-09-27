@@ -44,7 +44,7 @@ const __DATA__ = {
             'image': 'momo.jpg',
             'title': 'Momo',
             'show-value': 'Trần Văn Tiến',
-            'value': 'https://me.momo.vn/trantienvn',
+            'value': 'https://me.momo.vn/trantien0209',
             'type': 0,
         },
 		{
