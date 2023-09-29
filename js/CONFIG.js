@@ -44,7 +44,7 @@ const __DATA__ = {
             'image': 'momo.jpg',
             'title': 'Momo',
             'show-value': 'Trần Văn Tiến',
-            'value': 'https://me.momo.vn/trantien0209',
+            'value': 'https://me.momo.vn/trantienvn',
             'type': 0,
         },
 		{
@@ -53,6 +53,13 @@ const __DATA__ = {
             'show-value': 'Trần Văn Tiến',
             'value': './images/tienqr.png',
             'type': 2,
-        }
+        },
+        {
+            'image': 'vnp.jpg',
+            'title': 'VNPay',
+            'show-value': 'Trần Văn Tiến',
+            'value': './images/QR.jpg',
+            'type': 2,
+        },
     ]
 };
