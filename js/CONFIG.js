@@ -51,20 +51,20 @@ const __DATA__ = {
             'image': 'momo.jpg',
             'title': 'Momo',
             'show-value': 'Trần Văn Tiến',
-            'value': 'https://me.momo.vn/trantienvn',
+            'value': 'https://me.momo.vn/trantien0209',
             'type': 0,
         },{
             'image': 'mb.png',
             'title': 'MB Bank',
             'show-value': 'Trần Văn Tiến',
-            'value':'https://dl.vietqr.io/pay?app=mb&ba=0382652361@mb',
-            'type': 2,
+            'value':'https://img.vietqr.io/image/MB-0382652361-compac.png',
+            'type': 0,
         },
 		{
             'image': 'cake.png',
             'title': 'Cake',
             'show-value': 'Trần Văn Tiến',
-            'value': 'https://dl.vietqr.io/pay?app=cake&ba=0866658814@cake',
+            'value': 'https://img.vietqr.io/image/CAKE-0866658814-compac.png',
             'type': 0,
         }
     ]
