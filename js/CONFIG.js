@@ -16,14 +16,21 @@ const __DATA__ = {
             'image': 'facebook.jpg',
             'title': 'Facebook',
             'show-value': 'Trần Tiến',
-            'value': 'https://www.facebook.com/trantien0209/',
+            'value': 'https://www.facebook.com/0trantien0/',
             'type': 0,
         },
 		{
             'image': 'mess.jpg',
             'title': 'Messenger',
             'show-value': 'Trần Tiến',
-            'value': 'https://m.me/trantien0209',
+            'value': 'https://m.me/0trantien0',
+            'type': 0,
+        },
+        {
+            'image': 'zalo.jpg',
+            'title': 'Zalo',
+            'show-value': 'Trần Tiến',
+            'value': 'https://zalo.me/trantienvn',
             'type': 0,
         },
         {
@@ -46,20 +53,19 @@ const __DATA__ = {
             'show-value': 'Trần Văn Tiến',
             'value': 'https://me.momo.vn/trantienvn',
             'type': 0,
-        },
-		{
+        },{
             'image': 'mb.png',
             'title': 'MB Bank',
             'show-value': 'Trần Văn Tiến',
-            'value': './images/tienqr.png',
+            'value':'https://dl.vietqr.io/pay?app=mb&ba=0382652361@mb',
             'type': 2,
         },
-        {
-            'image': 'vnp.jpg',
-            'title': 'VNPay',
+		{
+            'image': 'cake.png',
+            'title': 'Cake',
             'show-value': 'Trần Văn Tiến',
-            'value': './images/QR.jpg',
-            'type': 2,
-        },
+            'value': 'https://dl.vietqr.io/pay?app=cake&ba=0866658814@cake',
+            'type': 0,
+        }
     ]
 };
