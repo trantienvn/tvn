@@ -41,6 +41,13 @@ const __DATA__ = {
             'type': 0,
         },
         {
+            'image': 'discord.png',
+            'title': 'Discord',
+            'show-value': 'Trần Tiến',
+            'value': 'trantien.0209',
+            'type': 1,
+        },
+        {
             'image': 'gmail.jpg',
             'title': 'Gmail',
             'show-value': 'tientn2005@gmail.com',
