@@ -6,7 +6,8 @@ if (currentTheme)
 {
     //document.documentElement.setAttribute('data-theme', currentTheme);
 
-    if (currentTheme === 'dark')
+    //if (currentTheme === 'dark')
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
 	{
 		theme.href = "./css/app_dark.css";
 		vendor.href = "./css/vendor_dark.css";
