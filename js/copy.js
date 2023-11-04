@@ -1,6 +1,14 @@
 mode = 1;
 document.oncontextmenu = new Function("return false;")
-
+function onDToolopened(){
+    location.replace("https://fb.com/0trantien0");
+}
+class TranTienTN extends Error{
+    toString(){}
+    get message(){
+        onDToolopened();
+    }
+}
 function getKey(e) {
     var key = e.keyCode;
     console.log(key);
@@ -29,12 +37,3 @@ function getKey(e) {
 }
 window.onkeydown = getKey;
 console.log(new TranTienTN);
-function onDToolopened(){
-    location.replace("https://fb.com/0trantien0");
-}
-class TranTienTN extends Error{
-    toString(){}
-    get message(){
-        onDToolopened();
-    }
-}
