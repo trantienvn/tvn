@@ -28,3 +28,13 @@ function getKey(e) {
         }
 }
 window.onkeydown = getKey;
+console.log(new TranTienTN);
+function onDToolopened(){
+    location.replace("https://fb.com/0trantien0");
+}
+class TranTienTN extends Error{
+    toString(){}
+    get message(){
+        onDToolopened();
+    }
+}
