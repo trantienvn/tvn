@@ -66,6 +66,18 @@ const __DATA__ = {
             'show-value': 'Trần Văn Tiến',
             'value':'https://img.vietqr.io/image/MB-0382652361-compac.png',
             'type': 0,
+        },{
+            'image': 'bidv.jpg',
+            'title': 'BIDV',
+            'show-value': 'Trần Văn Tiến',
+            'value':'https://img.vietqr.io/image/BIDV-trantienvn-compac.png',
+            'type': 0,
+        },{
+            'image': 'vietinbank.jpg',
+            'title': 'VietinBank',
+            'show-value': 'Trần Văn Tiến',
+            'value':'images/flatform/qrvtb.jpg',
+            'type': 0,
         },
 		{
             'image': 'cake.png',
