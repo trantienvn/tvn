@@ -17,7 +17,7 @@ if (localStorage.getItem('isPageOpen') === null) {
     // Trang web đã được mở trong tab khác
     alert('Trang web đã được mở trong một tab khác. Đang đóng tab cũ...');
     // Đóng tab cũ
-    window.close();
+    window.top.close();
   }
   
   // Lắng nghe sự kiện khi tab mới được mở
