@@ -1,4 +1,4 @@
-const __DATA__ = {
+const __DATAMOBILE__ = {
     
     'cover-image': 't.jpg',
     'avatar-image': 'avt.png',
@@ -88,7 +88,7 @@ const __DATA__ = {
         }
     ]
 };
-const __DATAMOBILE__ = {
+const __DATA__ = {
     
     'cover-image': 't.jpg',
     'avatar-image': 'avt.png',
