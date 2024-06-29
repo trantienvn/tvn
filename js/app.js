@@ -1,4 +1,25 @@
-const json_data = __DATA__;
+function isMobileDevice() {
+    var check = false;
+    (function(a) {
+      if(/(android|iphone|ipad|mobile|windows phone|iemobile|opera mini|blackberry|bb10|playbook)/i.test(a)) {
+        check = true;
+      }
+    })(navigator.userAgent || navigator.vendor || window.opera);
+    return check;
+  }
+  
+  if (isMobileDevice()) {
+    console.log("Thiết bị là di động");
+  } else {
+    console.log("Thiết bị là máy tính");
+  }
+  
+let json_data = __DATAMOBILE__;
+
+if(!isMobileDevice()){
+    json_data = __DATA__;
+}
+//const json_data = __DATA__;
 
 const username = json_data['name'];
 const cover_img = json_data['cover-image'];
