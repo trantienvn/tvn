@@ -4,7 +4,7 @@ const __DATAMOBILE__ = {
     'avatar-image': 'avt.png',
     'name': 'Trần Tiến',
     'skills': [
-        'Thích Movie',
+        'Thích làm chủ tịch',
         'Marvel',
     ],
     'bio-storys': [{
@@ -23,7 +23,7 @@ const __DATAMOBILE__ = {
             'image': 'mess.jpg',
             'title': 'Messenger',
             'show-value': 'Trần Tiến',
-            'value': 'fb-messenger://user/0trantien0',
+            'value': 'https://m.me/0trantien0',
             'type': 0,
         },
         {
@@ -51,20 +51,14 @@ const __DATAMOBILE__ = {
             'image': 'gmail.jpg',
             'title': 'Gmail',
             'show-value': 'tientn2005@gmail.com',
-            'value': 'tientn2005@gmail.com',
-            'type': 1,
+            'value': 'mailto:tientn2005@gmail.com',
+            'type': 0,
         },
         {
             'image': 'momo.jpg',
             'title': 'Momo',
             'show-value': 'Trần Văn Tiến',
             'value': 'https://me.momo.vn/trantien0209',
-            'type': 0,
-        },{
-            'image': 'mb.png',
-            'title': 'MB Bank',
-            'show-value': 'Trần Văn Tiến',
-            'value':'https://img.vietqr.io/image/MB-0382652361-compac.png',
             'type': 0,
         },{
             'image': 'bidv.jpg',
@@ -94,7 +88,7 @@ const __DATA__ = {
     'avatar-image': 'avt.png',
     'name': 'Trần Tiến',
     'skills': [
-        'Thích Movie',
+        'Thích làm chủ tịch',
         'Marvel',
     ],
     'bio-storys': [{
@@ -141,20 +135,14 @@ const __DATA__ = {
             'image': 'gmail.jpg',
             'title': 'Gmail',
             'show-value': 'tientn2005@gmail.com',
-            'value': 'tientn2005@gmail.com',
-            'type': 1,
+            'value': 'mailto:tientn2005@gmail.com',
+            'type': 0,
         },
         {
             'image': 'momo.jpg',
             'title': 'Momo',
             'show-value': 'Trần Văn Tiến',
             'value': 'https://me.momo.vn/trantien0209',
-            'type': 0,
-        },{
-            'image': 'mb.png',
-            'title': 'MB Bank',
-            'show-value': 'Trần Văn Tiến',
-            'value':'https://img.vietqr.io/image/MB-0382652361-compac.png',
             'type': 0,
         },{
             'image': 'bidv.jpg',
