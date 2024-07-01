@@ -16,7 +16,7 @@ const __DATAMOBILE__ = {
             'image': 'facebook.jpg',
             'title': 'Facebook',
             'show-value': 'Trần Tiến',
-            'value': 'fb://user/0trantien0/',
+            'value': 'fb://profile/100028678639789',
             'type': 0,
         },
 		{
