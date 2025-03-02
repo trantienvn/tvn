@@ -61,16 +61,10 @@ const __DATA__ = {
         'value': 'https://me.momo.vn/trantien0209',
         'type': 0,
     }, {
-        'image': 'bidv.jpg',
-        'title': 'BIDV',
-        'show-value': 'Trần Văn Tiến',
-        'value': 'https://img.vietqr.io/image/BIDV-trantienvn-compac.png',
-        'type': 2,
-    }, {
         'image': 'vietinbank.jpg',
         'title': 'VietinBank',
         'show-value': 'Trần Văn Tiến',
-        'value': 'images/flatform/qrvtb.jpg',
+        'value': './images/qrvtb.jpg',
         'type': 2,
     },
     {
@@ -82,3 +76,16 @@ const __DATA__ = {
     }
     ]
 };
+const brightColors = [
+    "#FF5733", // Cam sáng
+    "#33FF57", // Xanh lá tươi
+    "#33A1FF", // Xanh dương sáng
+    "#FF33A8", // Hồng neon
+    "#FFD700", // Vàng kim
+    "#FF4500", // Đỏ cam sáng
+    "#00FA9A", // Xanh lục bảo tươi
+    "#DA70D6", // Tím phong lan sáng
+    "#00BFFF", // Xanh da trời tươi
+    "#FF1493"  // Hồng đậm tươi
+];
+const action = ['MỞ', 'CHÉP', 'XEM'];

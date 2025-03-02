@@ -1,58 +1,43 @@
 const json_data = __DATA__;
 
 const username = json_data['name'];
-const cover_img = json_data['cover-image'];
-const avatar_img = json_data['avatar-image']
+const cover_img = json_data['cover-image'].includes('http') ? json_data['cover-image'] : `./images/${json_data['cover-image']}`;
+const avatar_img = json_data['avatar-image'].includes('http') ? json_data['avatar-image'] : `./images/${json_data['avatar-image']}`;
 const skills = json_data['skills'];
-const bio_storys = json_data['bio-storys']
-const links = json_data['links']
+const bio_storys = json_data['bio-storys'];
+const links = json_data['links'];
 
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
     var container = document.getElementsByClassName('container')[0];
     var bio_story_html = '';
     var skills_html = '';
     var links_html = '';
-
-    //LOAD CONFIG
-
-    //MODAL PROCESS
-
-
-    // RENDER HEADER
-
-    var split_name = username.split();
+    var split_name = username.split(' ');
     var first_name = '';
     var last_name = '';
 
     if (split_name.length <= 2) {
         first_name = split_name.join(' ');
-    } else if (split_name == 3) {
-        first_name = split_name[0] + split_name[1];
+    } else if (split_name.length == 3) {
+        first_name = split_name[0] + ' ' + split_name[1];
         last_name = split_name[2];
-    } else if (split_name == 4) {
-        first_name = split_name[0] + split_name[1];
-        last_name = split_name[2] + split_name[3];
+    } else if (split_name.length == 4) {
+        first_name = split_name[0] + ' ' + split_name[1];
+        last_name = split_name[2] + ' ' + split_name[3];
     }
 
-
     for (let i = 0; i < skills.length; i++) {
-        if (i % 2 == 0) {
-            skills_html += `
-                <div class="skill-item" style="color: #EF9D64;" >${skills[i]}</div>
-            `;
-        } else {
-            skills_html += `
-                <div class="skill-item" style="color: #85D18A;" >${skills[i]}</div>
-            `;
-        }
+        let randomColor = brightColors[Math.floor(Math.random() * brightColors.length)];
+        skills_html += `
+            <div class="skill-item" style="color: ${randomColor};" >${skills[i]}</div>
+        `;
     }
 
     for (let i = 0; i < bio_storys.length; i++) {
+        let bio_img = bio_storys[i]['image'].includes('http') ? bio_storys[i]['image'] : `./images/${bio_storys[i]['image']}`;
         bio_story_html += `
         <div class="bio-story">
-            <div class="bio-story-thumb"
-                style="background-image: url('./images/${bio_storys[i]['image']}');"
-            ></div>
+            <div class="bio-story-thumb" style="background-image: url('${bio_img}');"></div>
             <div class="bio-story-content">
                 <p>${bio_storys[i]['content']}</p>
                 <span>${bio_storys[i]['author']}</span>
@@ -63,100 +48,40 @@ $(document).ready(function () {
 
     container.innerHTML += `
     <header>
-        <div id="cover-image"
-            style="background-image: url('./images/${cover_img}');"
-        ></div>
+        <div id="cover-image" style="background-image: url('${cover_img}');"></div>
         <div id="profile-header">
-            <div id="avatar-image"
-                style="background-image: url('./images/${avatar_img}');"
-            ></div>
+            <div id="avatar-image" style="background-image: url('${avatar_img}');"></div>
             <div id="name">
                 <p id="first-name" class="names">${first_name}</p>
                 <p id="last-name" class="names">${last_name}</p>
-                <div id="skills">
-                    ${skills_html}
-                </div>
+                <div id="skills">${skills_html}</div>
             </div>
         </div>
         ${bio_story_html}
     </header>
     `;
-
-    //RENDER CONTENT BODY
-
-
-
-
-
     for (let i = 0; i < links.length; i++) {
-        var pos = links[i]['type'];
-        switch (pos) {
-            case 0:
-                links_html += `
+        let randomColor = brightColors[Math.floor(Math.random() * brightColors.length)];
+        links_html += `
         <div
-		onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
+		onclick="tryaction(${links[i]['type']}, ${"'" + links[i]['value'] + "'"})"
 		class="link-item">
             <div class="bio-story-thumb"
-            style="background-image: url('./images/flatform/${links[i]['image']}');"
+            style="background-image: url('./images/${links[i]['image']}');"
             ></div>
             <div class="link-content">
                 <p>${links[i]['title']}</p>
                 <span
-                onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
+                onclick="tryaction(${links[i]['type']}, ${"'" + links[i]['value'] + "'"})"
                 >${links[i]['show-value']}</span>
             </div>
             <div class="link-btn">
-                <div class="link-btn-chill light-orange"
-                onclick="window.open(${"'"}${links[i]['value']}${"'"}, '_blank')"
-                >MỞ</div>
+                <div class="link-btn-chill" style="color: ${randomColor};"
+                onclick="tryaction(${links[i]['type']}, ${"'" + links[i]['value'] + "'"})"
+                >${action[links[i]['type']]}</div>
             </div>
         </div>
         `;
-                break;
-            case 1:
-                links_html += `
-        <div
-		onclick="copy(${"'"}${links[i]['value']}${"'"})"
-		class="link-item">
-            <div class="bio-story-thumb"
-            style="background-image: url('./images/flatform/${links[i]['image']}');"
-            ></div>
-            <div class="link-content">
-                <p>${links[i]['title']}</p>
-                <span
-                onclick="copy(${"'"}${links[i]['value']}${"'"})"
-                >${links[i]['show-value']}</span>
-            </div>
-            <div class="link-btn">
-                <div class="link-btn-chill light-blue"
-                onclick="copy(${"'"}${links[i]['value']}${"'"})"
-                >CHÉP</div>
-            </div>
-        </div>
-        `;
-                break;
-            case 2:
-                links_html += `
-        <div
-		onclick="show_image(${"'"}${links[i]['value']}${"'"})"
-		class="link-item">
-            <div class="bio-story-thumb"
-            style="background-image: url('./images/flatform/${links[i]['image']}');"
-            ></div>
-            <div class="link-content">
-                <p>${links[i]['title']}</p>
-                <span
-                onclick="show_image(${"'"}${links[i]['value']}${"'"})"
-                >${links[i]['show-value']}</span>
-            </div>
-            <div class="link-btn">
-                <div class="link-btn-chill light-blue"
-                onclick="show_image(${"'"}${links[i]['value']}${"'"})"
-                >MỞ</div>
-            </div>
-        </div>
-        `;
-        }
     }
 
     container.innerHTML += `
@@ -168,10 +93,15 @@ $(document).ready(function () {
     </div>
     `;
 });
-
-
-// 
-
+tryaction = (action, value) =>{
+    if (action == 0) {
+        window.open(value, '_blank');
+    } else if (action == 1) {
+        copy(value);
+    } else if (action == 2) {
+        show_image(value);
+    }
+}
 function copy(str) {
     const el = document.createElement('textarea');
     el.value = str;
@@ -186,15 +116,22 @@ function copy(str) {
 }
 
 function show_modal(str) {
-    document.getElementById('description').innerText = str;
-    document.getElementsByClassName("popup")[0].classList.add("active");
-
-
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('bankDialog').style.display = 'block';
+    document.getElementById('bankDialog').innerHTML = `
+    
+      <div class="container2">
+      <div class="title">
+                Thông Báo
+            </div>
+      <p class="text">${str}</p>
+          <button class="dismiss-popup-btn" onclick="closeDialog()">
+            Đóng
+          </button>
+  
+      </div>`;
 }
 
-document.getElementById("dismiss-popup-btn").addEventListener("click", function () {
-    document.getElementsByClassName("popup")[0].classList.remove("active");
-});
 function show_image(str) {
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('bankDialog').style.display = 'block';
@@ -214,3 +151,8 @@ closeDialog = () => {
     document.getElementById('bankDialog').style.display = 'none';
 
 }
+document.addEventListener("contextmenu", (event) => event.preventDefault()); // Chặn chuột phải
+
+document.addEventListener("selectstart", (event) => event.preventDefault()); // Chặn chọn văn bản
+
+document.addEventListener("dragstart", (event) => event.preventDefault()); // Chặn kéo thả văn bản

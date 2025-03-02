@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+    display: none;
+}
 html {
     background-color: #eeeeee;
     font-family: 'Inter', sans-serif;
@@ -63,6 +66,9 @@ body {
     height: 165px;
     position: relative;
     left: -15px;
+    border-bottom: 5px solid black;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
 }
 
 #profile-header {
@@ -217,6 +223,7 @@ body {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     /* number of lines to show */
     -webkit-box-orient: vertical;
     transition: all 250ms;
@@ -257,87 +264,5 @@ body {
 
 .link-btn-chill:hover::before {
     opacity: 0.5;
-}
-
-/*Simple css to style it like a toggle switch*/
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  position: fixed;
-    bottom: 10px;
-    left: 10px;
-  z-index: 1000;
-}
-  @media screen and (max-width: 767px){
-    .theme-switch-wrapper {
-    	bottom: 5px;
-    right: 5px;
-      left: auto;
-    }
-  }
-.theme-switch-wrapper span {
-    margin-left: 10px;
-    font-size: 12px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-  color: var(--black);
-  }
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-  display:none;
-}
-
-.theme-switch input {
-  display:none;
-}
-
-.slider {
-  background-color: var(--gray);
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-}
-
-.slider:before {
-  background-color: white;
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 26px;
-}
-
-input:checked + .slider {
-  background-color: (--black);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-  background-color: var(--white);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-:root {
-  --white: white;
-  --black: black;
-  --gray: #666;
-  --grhv: #eee;
-  --textsp: #587FE1;
-  --bg: #E8F0FB;
 }
 
