@@ -4,8 +4,10 @@ const __DATA__ = {
     'avatar-image': 'avt.png',
     'name': 'Trần Tiến',
     'skills': [
-        'Thích làm chủ tịch',
-        'Marvel',
+        'Không thích ăn rau',
+        'Phim ảnh',
+        'Free Fire',
+        'Em',
     ],
     'bio-storys': [{
         'image': 'admin.png',
