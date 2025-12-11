@@ -1,39 +1,115 @@
 <!DOCTYPE html>
-<html lang="vn">
+<html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trần Văn Tiến</title>
-  <meta name="description" content="Thông tin giới thiệu về Trần Tiến">
-  <link rel="icon" href="https://trantienvn.github.io/favicon.ico" type="image/x-icon" />
-  <link id="favicon" rel="shortcut icon" href="https://trantienvn.github.io/favicon.ico" type="image/x-icon">
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/app.css">
-  <link rel="stylesheet" href="./css/dialog.css">
-  <link rel="stylesheet" href="./css/responsive.css">
-  <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Tiến - Developer & Content Creator | Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Trần Tiến - Lập trình viên và nhà sáng tạo nội dung. Kết nối với tôi qua Facebook, TikTok, GitHub và các nền tảng mạng xã hội khác.">
+    <meta name="keywords" content="Trần Tiến, developer, lập trình viên, portfolio, trantien, GitHub, TikTok, Facebook">
+    <meta name="author" content="Trần Tiến">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Trần Tiến - Developer & Content Creator">
+    <meta property="og:description" content="Kết nối với Trần Tiến - Lập trình viên và nhà sáng tạo nội dung.">
+    <meta property="og:url" content="./">
+    <meta property="og:image" content="trantien.png">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="root">
-    <div id="main">
-      <div class="container">
-        <!-- RENDER HERE ! -->
-      </div>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="content">
+        <nav>
+            <div class="logo">TRAN TIEN</div>
+            <div class="nav-links">
+                <a href="#home">Trang chủ</a>
+                <a href="#skills">Kỹ Năng</a>
+                <a href="#projects">Dự Án</a>
+                <a href="#apps">Ứng dụng</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <img src="./trantien.png" alt="Trần Tiến">
+                    </div>
+                </div>
+                <h1 class="glitch">TRẦN TIẾN</h1>
+                <p class="nickname"><a href="https://tiktok.com/@trantien.tech">@trantien.tech</a></p>
+                <p class="role">Developer & Content Creator</p>
+                <p class="description">
+                    Lập trình viên và nhà sáng tạo nội dung<br>
+                    Kết nối với tôi qua các nền tảng mạng xã hội
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://www.facebook.com/0trantien0" target="_blank" class="btn btn-primary">📘
+                        Facebook</a>
+                    <a href="https://m.me/0trantien0" target="_blank" class="btn btn-secondary">💬 Messenger</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Kỹ Năng</h2>
+            <div class="skills-grid">
+                <!-- Render kỹ năng ở đây -->
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Dự Án Nổi Bật</h2>
+            <div class="project-showcase">
+                <!-- render dự án nổi bật -->
+            </div>
+        </section>
+
+        <section id="apps">
+            <h2 class="section-title">Thư Viện Ứng Dụng</h2>
+            <div class="apps-slider-container">
+                <button class="slider-btn slider-btn-prev">❮</button>
+                <div class="apps-slider">
+                    <!-- render slider app ở đây -->
+                </div>
+                <button class="slider-btn slider-btn-next">❯</button>
+                <div class="slider-dots"></div>
+            </div>
+        </section>
+
+
+
+        <section id="contact">
+            <h2 class="section-title">Liên Hệ Với Tôi</h2>
+            <div class="contact-grid">
+                <!-- Render  -->
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p style="font-size: 1.1em; margin-bottom: 10px;">&copy; <span id="year"></span> Trần Tiến</p>
+                <p>Developer & Content Creator</p>
+            </div>
+        </footer>
     </div>
-  </div>
-  <!-- PLUGIN  -->
-  <!-- SCRIPT -->
 
-  <script src="./js/CONFIG.js"></script>
-  <script src="./js/app.js"></script>
-  <div class="overlay" id="overlay"></div>
-  <div class="bank-container" id="bankDialog">
-
-  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="render.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
