@@ -126,13 +126,26 @@ const skillgrid = document.querySelector(".skills-grid");
 const projectshowcase = document.querySelector(".project-showcase");
 const appslider = document.querySelector(".apps-slider");
 const contactgrid = document.querySelector(".contact-grid");
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
 
 data.skills.forEach(skill => {
     const skillcard = document.createElement("div");
     const icon = document.createElement("span");
     const name = document.createElement("h3");
     const desc = document.createElement("p");
-    
+
     skillcard.classList.add("skill-card");
     icon.classList.add("skill-icon");
     icon.innerHTML = skill.icon;
@@ -143,6 +156,8 @@ data.skills.forEach(skill => {
     skillcard.appendChild(icon);
     skillcard.appendChild(name);
     skillgrid.appendChild(skillcard);
+    revealObserver.observe(skillcard);
+
 });
 
 data.projects.forEach(project => {
@@ -155,7 +170,7 @@ data.projects.forEach(project => {
     const ctaLink = document.createElement("a");
     const projectcta = document.createElement("div");
     const projectcard = document.createElement("div");
-    
+
     projectheader.classList.add("project-header");
     icon.classList.add("project-icon");
     icon.innerHTML = project.icon;
@@ -172,7 +187,7 @@ data.projects.forEach(project => {
         const featureitem = document.createElement("div");
         const featuretext = document.createElement("span");
         const featureicon = document.createElement("span");
-        
+
         featureitem.classList.add("feature-item");
         featureicon.classList.add("feature-icon");
         featureicon.innerHTML = feature.icon;
@@ -194,37 +209,45 @@ data.projects.forEach(project => {
     projectcard.appendChild(projectbody);
     projectcard.appendChild(projectcta);
     projectshowcase.appendChild(projectcard);
+        revealObserver.observe(projectcard);
+
 });
 data.apps.forEach(app => {
     const appslide = document.createElement("a");
+    appslide.href = app.link;
+    appslide.target = "_blank";
+    appslide.classList.add("app-slide");
+
     const icon = document.createElement("span");
     const name = document.createElement("h3");
     const desc = document.createElement("p");
 
-    appslide.href = app.link;
-    appslide.classList.add("app-slide");
-    appslide.target = "_blank";
     icon.classList.add("skill-icon");
     icon.innerHTML = app.icon;
     name.classList.add("skill-name");
     name.innerHTML = app.name;
     desc.classList.add("skill-desc");
     desc.innerHTML = app.description;
+
     appslide.appendChild(icon);
     appslide.appendChild(name);
     appslide.appendChild(desc);
     appslider.appendChild(appslide);
+
+    revealObserver.observe(appslide);
 });
+
 data.contacts.forEach(contact => {
     const contactcard = document.createElement("a");
+    contactcard.href = contact.link;
+    contactcard.target = "_blank";
+    contactcard.classList.add("contact-card");
+
     const icon = document.createElement("span");
     const info = document.createElement("div");
     const title = document.createElement("h3");
     const text = document.createElement("p");
 
-    contactcard.href = contact.link;
-    contactcard.classList.add("contact-card");
-    contactcard.target = "_blank";
     icon.classList.add("contact-icon");
     icon.innerHTML = contact.icon;
     info.classList.add("contact-info");
@@ -232,9 +255,12 @@ data.contacts.forEach(contact => {
     title.innerHTML = contact.title;
     text.classList.add("contact-text");
     text.innerHTML = contact.text;
+
     info.appendChild(title);
     info.appendChild(text);
     contactcard.appendChild(icon);
     contactcard.appendChild(info);
     contactgrid.appendChild(contactcard);
+
+    revealObserver.observe(contactcard);
 });

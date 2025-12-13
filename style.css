@@ -38,6 +38,7 @@ nav {
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(14px);
     z-index: 100;
+    box-shadow: #000 0px 0px 25px 15px;
     border-bottom: 1px solid rgba(102, 126, 234, 0.2);
 }
 
@@ -238,7 +239,7 @@ section {
     font-size: 3em;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     position: relative;
 }
 
@@ -466,7 +467,7 @@ footer {
 .apps-slider-container {
     position: relative;
     max-width: 1200px;
-    margin: 80px auto 0;
+    margin: 10px auto 0;
     overflow: hidden;
     padding: 0 60px;
 }
@@ -475,6 +476,7 @@ footer {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 30px;
+    padding-top: 10px;
 }
 
 .app-slide {
